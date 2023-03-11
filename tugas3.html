@@ -1,0 +1,60 @@
+<html>
+    <head>
+
+    </head>
+    <script src="jquery-3.6.3.min.js"></script>
+        <script type="text/javascript">
+        function fadeOut() {
+            var kotak = document.getElementById("box"); // mengambil elemen dengan id "kotak"
+            var opacity = 1; // opacity awal
+            var timer = setInterval(function() {
+                if (opacity <= 0) { // jika opacity sudah mencapai 0, sembunyikan kotak
+                clearInterval(timer);
+                kotak.style.display = "none";
+                }
+                kotak.style.opacity = opacity; // ubah opacity pada kotak
+                opacity -= 0.1; // kurangi opacity sebesar 0.1 setiap kali dijalankan
+            }, 100); // perubahan opacity akan terjadi setiap 100 milidetik (0,1 detik)
+}
+
+        function fadeIn(){
+            var kotak = document.getElementById("box"); // mengambil elemen dengan id "kotak"
+            kotak.style.opacity = 0; // mengatur opacity awal menjadi 0
+            kotak.style.display = "block"; // menampilkan kotak
+            var opacity = 0; // opacity awal
+            var timer = setInterval(function() {
+                if (opacity >= 1) { // jika opacity sudah mencapai 0.3, hentikan perubahan opacity
+                clearInterval(timer);
+                }
+                kotak.style.opacity = opacity; // ubah opacity pada kotak
+                opacity += 0.1; // tambahkan opacity sebesar 0.1 setiap kali dijalankan
+            }, 100); // perubahan opacity akan terjadi setiap 100 milidetik (0,1 detik)
+            }
+        function fade03() {
+            var kotak = document.getElementById("box"); // mengambil elemen dengan id "kotak"
+            var opacity = 1; // opacity awal
+            var timer = setInterval(function() {
+            if (opacity <= 0.3) { // jika opacity sudah mencapai 0.3, hentikan perubahan opacity
+            clearInterval(timer);
+            }
+            kotak.style.opacity = opacity; // ubah opacity pada kotak
+            opacity -= 0.1; // kurangi opacity sebesar 0.1 setiap kali dijalankan
+            }, 100); // perubahan opacity akan terjadi setiap 100 milidetik (0,1 detik)
+            }
+        </script>
+        <style type="text/css">
+            #box
+            {
+                height: 200px;
+                width: 200px;
+                border: solid;
+                background-color: yellow;
+            }
+        </style>
+    <body>
+        <div id="box"></div>
+        <p><button onclick="fadeOut()"> Sembunyikan </button>
+            <button onclick="fadeIn()"> Tampilkan </button>
+            <button onclick="fade03()"> Fade0,3 </button></p>
+    </body>
+</html>
